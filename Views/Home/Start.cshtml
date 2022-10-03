@@ -1,0 +1,49 @@
+﻿@model datatable_app.Models.User
+@{
+    ViewBag.Title = "Start";
+}
+
+<h2>Start</h2>
+
+@using (Html.BeginForm("Start", "Home", FormMethod.Post, new { @id = "myForm" }))
+{
+    <table cellpadding="3" cellspacing="0">
+        <tr>
+            <th colspan="5" align="center">Person Details</th>
+        </tr>
+        <tr>
+            <td>Div</td>
+            <td>
+                @Html.TextBoxFor(m => m.Div, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Div, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>Name </td>
+            <td>
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>RollNO </td>
+            <td>
+                @Html.TextBoxFor(m => m.RollNo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.RollNo, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+      
+            
+
+        
+        
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Submit" onclick="AjaxSubmit()" /></td>
+        </tr>
+    </table>
+}
+
+@section Scripts{
+    <script src="~/Scripts/main.js"></script>
+}
